@@ -16,30 +16,52 @@
                   </div>
                   <div class="user-text">
                     <p>2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde ex vero fugit facilis soluta commodi consectetur ipsum, laboriosam dolore tempora repellendus iste quaerat nihil at aspernatur excepturi iusto. Pariatur.</p>
-                    <span>Rabindra Nath Tagore</span>
+                    <span>Devdas Manjana</span>
                   </div>
                   <div class="user-text">
                     <p>3. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde ex vero fugit facilis soluta commodi consectetur ipsum, laboriosam dolore tempora repellendus iste quaerat nihil at aspernatur excepturi iusto. Pariatur.</p>
-                    <span>Rabindra Nath Tagore</span>
+                    <span>Shakespeer</span>
                   </div>
                   <div class="user-text active-text" >
                     <p>4. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde ex vero fugit facilis soluta commodi consectetur ipsum, laboriosam dolore tempora repellendus iste quaerat nihil at aspernatur excepturi iusto. Pariatur.</p>
-                    <span>Rabindra Nath Tagore</span>
+                    <span>Mohammad Sharif</span>
                   </div>
                   <div class="user-text">
                     <p>5. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde ex vero fugit facilis soluta commodi consectetur ipsum, laboriosam dolore tempora repellendus iste quaerat nihil at aspernatur excepturi iusto. Pariatur.</p>
-                    <span>Rabindra Nath Tagore</span>
+                    <span>Sultan</span>
                   </div>
             </div>
 
             <div class="testimonial-pic">
-                <img src="image1.jpg" alt="" >
-                <img src="image2.jpg" alt="">
-                <img src="image3.jpg" alt="">
-                <img src="image4.jpg" alt="" class="active-pic">
-                <img src="image5.jpg" alt="">
+                <img src="image1.jpg" alt="" onclick="showReview()">
+                <img src="image2.jpg" alt=""  onclick="showReview()">
+                <img src="image3.jpg" alt=""  onclick="showReview()">
+                <img src="image4.jpg" alt="" onclick="showReview()">
+                <img src="image5.jpg" alt=""  onclick="showReview()">
             </div>
         </div>
     </div>
+    <script>
+
+let userTexts = document.getElementsByClassName("user-text");
+        let userPics = document.querySelectorAll("img");
+     
+     function showReview() {
+        
+        for(userText of userTexts) {
+            userText.classList.remove("active-text");
+        }
+        for(userPic of userPics) {
+            userPic.classList.remove("active-pic");
+        }
+
+        let i = Array.from(userPics).indexOf(event.target);
+          
+        userPics[i].classList.add("active-pic");
+        userTexts[i].classList.add("active-text");
+      
+     }
+
+    </script>
 </body>
 </html>

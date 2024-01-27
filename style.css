@@ -18,8 +18,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .testimonial-text {
+    max-width:500px;
    padding: 40px;
    background-color: brown;
    color:#fff;
@@ -34,29 +36,38 @@
     text-align: center;
     font-size: 18px;
 }
-.user-text span {
+span {
     font-size:14px;
-    text-align:end;
-    padding:130px;
     line-height: 30px;
+   text-align: center;
 }
 .user-text p::before,p::after{
     content:'"';
 }
-.user-text span::before{
-    content:"-";
-}
+
 .active-text{
-    display:block;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    animation: moveup 1s linear forwards;
 }
 img {
     width:50px;
     height:50px;
-    border-radius: 50%;   
+    border-radius: 50%; 
+    margin:20px;  
 }
-img:hover{
+img:hover,.active-pic{
     cursor: pointer;
     width: 70px;
     height: 70px;
     border: 3px solid red;
+}
+@keyframes moveup {
+    0% {
+        margin-top: 25px;
+    }
+    100%{
+        margin-top:0px;
+    }
 }
